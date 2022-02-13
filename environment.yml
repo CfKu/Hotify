@@ -1,0 +1,22 @@
+# conda env update/create -f environment.yml
+name: hotify
+channels:
+  - conda-forge
+dependencies:
+  ### RUNTIME -------------------------------------------------------------------
+  # Python
+  - python=3.*
+  - watchdog
+  - click
+  - pyyaml
+  # requirements
+  ### PIP -----------------------------------------------------------------------
+  #- pip
+  #- pip:
+  #    -
+  ### DEVELOPMENT ---------------------------------------------------------------
+  - pycodestyle
+  - black
+  - pylint
+  - chardet
+  - ipython

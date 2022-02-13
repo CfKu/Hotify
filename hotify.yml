@@ -1,0 +1,43 @@
+hotify_hot_folder_name: __hotified
+hotify_output_folder_name: __hotified_OUTPUT
+hotify_input_multiple_files_delay: 5.0
+hotify_environments:
+  - name: pdf-ocr-deu
+    trigger: ocrmypdf --output-type pdf --deskew --rotate-pages -l deu "{in_file}" "{out_file}"
+    in_pattern:
+      - "*.pdf"
+  - name: pdf-merge
+    trigger: gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOUTPUTFILE="{out_file}" {in_files}
+    in_pattern:
+      - "*.pdf"
+  - name: clean-pdf
+    trigger:
+      - gs
+        -dNOPAUSE
+        -dBATCH
+        -sDEVICE=pdfwrite
+        -sOutputFile="{out_file}"
+        -f "{in_file}"
+      - exiftool
+        -all:all=''
+        "{in_file}"
+        -o "{out_file}"
+      - qpdf
+        --linearize
+        "{in_file}"
+        "{out_file}"
+      - cpdf
+        -i "{in_file}"
+        -set-page-layout OneColumn AND
+        -set-page-mode UseNone AND
+        -open-at-page-fit 1 AND
+        -remove-annotations AND
+        -remove-bookmarks AND
+        -remove-metadata AND
+        -set-title "" AND
+        -set-author "" AND
+        -set-subject "" AND
+        -set-keywords ""
+        -o "{out_file}"
+    in_pattern:
+      - "*.pdf"
