@@ -24,7 +24,8 @@ You have to specify a `name` (the name of the hot folder), a `trigger` (the shel
 Please see [hotify.yml](hotify.yml) for some examples.
 
 ## CLI
-If not specified, Hotify leaves the hot folder like it was. If you set `--clean`, everything will be cleaned up.
+You can create the hot folder `hotify_hot_folder_name` anywhere, by passing the root directory as first parameter (here `.`).
+If not specified, Hotify leaves the hot folder like it was. If you set `--clean`, everything will be cleaned up after stopping Hotify with `Ctrl+C`.
 ```bash
 python hotify.py . --clean
 ```
