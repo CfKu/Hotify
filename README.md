@@ -7,6 +7,9 @@ If you run Hotify, all environments will be created in a subfolder defined as `h
 ## Configuration file [hotify.yml](hotify.yml)
 All settings will be made in the [hotify.yml](hotify.yml). Your hotify environments will be defined in the `hotify_environments` Section
 ```yml
+hotify_hot_folder_name: __hotified
+hotify_output_folder_name: __hotified_OUTPUT
+hotify_input_multiple_files_delay: 5.0
 hotify_environments:
   - name: pdf-ocr-deu
     trigger: ocrmypdf --output-type pdf --deskew --rotate-pages -l deu "{in_file}" "{out_file}"
