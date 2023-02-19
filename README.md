@@ -31,4 +31,4 @@ python hotify.py . --clean
 ```
 
 # License
-This project is licensed under the MIT license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the terms of the MIT license - see the [LICENSE](LICENSE) file for details.
