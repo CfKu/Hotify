@@ -1,7 +1,7 @@
 # Hotify
 Hotify creates hot folders based on a configuration in which predefined shell commands are executed.
 
-# Description
+## Description
 If you run Hotify, all environments will be created in a subfolder defined as `hotify_hot_folder_name`. If you put a file in this hot folder, Hotify will trigger a command specified.
 
 ## Configuration file [hotify.yml](hotify.yml)
@@ -30,5 +30,5 @@ If not specified, Hotify leaves the hot folder like it was. If you set `--clean`
 python hotify.py . --clean
 ```
 
-# License
+## License
 This project is licensed under the terms of the MIT license - see the [LICENSE](LICENSE) file for details.
